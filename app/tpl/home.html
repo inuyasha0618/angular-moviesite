@@ -1,1 +1,17 @@
 <h1>{{pageMessage}}<small>powered by 尼古拉斯大帝</small></h1>
+
+<div class="row">
+	<div class="col-md-2" ng-repeat="movie in movies">
+		<div class="thumbnail">
+			<a href="#movie/{{movie._id}}">
+				<img src="{{movie.poster}}" style="height: 190px;">
+			</a>
+			<div class="caption">
+				<h5 style="height:25px">{{movie.title}}</h5>
+				<p>
+					<a href="#movie/{{movie._id}}" class="btn btn-primary">点击播放</a>
+				</p>	
+			</div>
+		</div>
+	</div>
+</div>
