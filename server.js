@@ -29,3 +29,11 @@ app.get('/data',function(req,res){
 		res.json(data);
 	});
 });
+
+app.get('/data/:id',function(req,res){
+	var id = req.params.id;
+	movieModel.findOne({_id:id},function(err,data){
+		if(err) return console.log(err);
+		res.json(data);
+	});
+})

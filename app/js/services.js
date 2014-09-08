@@ -5,7 +5,7 @@ angular.module('myApp.services',[])
 			return $http.get('/data');
 		},
 		getById: function(id){
-			return $http.get('/data' + id);
+			return $http.get('/data/' + id);
 		}
 	}
 })
