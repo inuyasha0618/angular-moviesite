@@ -1,4 +1,9 @@
 <h1>{{pageMessage}}<small>powered by 尼古拉斯大帝</small></h1>
+<div class="row" style="margin-bottom: 20px;">
+	<div class="col-md-5">
+		<input type="text" class="form-control" placeholder="输入查询条件" ng-model="query">
+	</div>
+</div>
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr>
@@ -14,7 +19,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat='movie in movies'>
+		<tr ng-repeat='movie in movies|filter:query'>
 			<td>{{movie.title}}</td>
 			<td>{{movie.director}}</td>
 			<td>{{movie.country}}</td>
