@@ -23,7 +23,7 @@
 			<td>{{movie.meta.updateAt}}</td>
 			<td><a href="#/movie/{{movie._id}}">查看</a></td>
 			<td><a href="#/update/{{movie._id}}">更新</a></td>
-			<td><a href="" class="btn btn-danger">删除</a></td>
+			<td><a ng-click="remove(movie._id)" class="btn btn-danger">删除</a></td>
 		</tr>
 	</tbody>
 </table>

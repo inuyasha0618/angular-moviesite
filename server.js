@@ -67,3 +67,14 @@ app.post('/data/new',function(req,res){
 		})
 	}
 })
+
+app.delete('/data/:id',function(req,res){
+	var id = req.params.id;
+	movieModel.remove({_id:id},function(err,data){
+		if(err) return console.log(err);
+		movieModel.find(function(err,dts){
+			if(err) return console.log(err);
+			res.json(dts);
+		})
+	})
+})

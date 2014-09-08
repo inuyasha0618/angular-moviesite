@@ -26,9 +26,14 @@ angular.module('myApp.controllers',['myApp.services'])
 	})
 
 })
-.controller('listCtrl',function($scope,getData){
+.controller('listCtrl',function($scope,getData,delData){
 	$scope.pageMessage = '列表页';
 	$scope.movies = [];
+	$scope.remove = function(id){
+		delData.delete(id).success(function(dts){
+			$scope.movies = dts;
+		})
+	}
 	getData.fetch().success(function(dts){
 		$scope.movies = dts;
 		console.log(dts[0].meta.createAt);

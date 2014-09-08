@@ -16,3 +16,10 @@ angular.module('myApp.services',[])
 		}
 	}
 })
+.factory('delData',function($http){
+	return {
+		delete: function(id){
+		   return $http.delete('/data/' + id);
+		}
+	}
+})
