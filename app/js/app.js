@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',['ngRoute','myApp.controllers','myApp.services','myApp.directives'])
+var myApp = angular.module('myApp',['ngRoute','myApp.controllers','myApp.services','myApp.directives','myApp.filters'])
 .config(function($routeProvider){
 	$routeProvider.when('/',{templateUrl:'tpl/home.html',controller:'homeCtrl'})
 				  .when('/admin',{templateUrl:'tpl/admin.html',controller:'adminCtrl'})

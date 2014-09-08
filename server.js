@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json()) 
 app.use(express.static(__dirname + '/app')); 
 
+
+
 mongoose.connection.on("connected",function(){
 	console.log('mongoose connects to ' + dbURI + ' successfully!');
 });
@@ -24,7 +26,7 @@ app.listen(port,function(){
 });
 
 app.get('/data',function(req,res){
-	movieModel.find(function(err,data){
+	movieModel.fetch(function(err,data){
 		if(err) return console.log(err);
 		res.json(data);
 	});
@@ -72,7 +74,7 @@ app.delete('/data/:id',function(req,res){
 	var id = req.params.id;
 	movieModel.remove({_id:id},function(err,data){
 		if(err) return console.log(err);
-		movieModel.find(function(err,dts){
+		movieModel.fetch(function(err,dts){
 			if(err) return console.log(err);
 			res.json(dts);
 		})
