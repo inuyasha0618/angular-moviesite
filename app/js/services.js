@@ -9,3 +9,10 @@ angular.module('myApp.services',[])
 		}
 	}
 })
+.factory('postData',function($http){
+	return {
+		post: function(data){
+			return $http({method: 'POST',url: '/data/new',data: data});
+		}
+	}
+})

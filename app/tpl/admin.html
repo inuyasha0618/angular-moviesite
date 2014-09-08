@@ -3,54 +3,54 @@
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">电影名</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.title'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">导演</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.director'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">国家</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.country'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">语言</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.language'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">上映年份</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.year'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">简介</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.summary'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">海报地址</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.poster'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label col-md-2">视频地址</label>
 		<div class="col-md-10">
-			<input type="text" class="form-control">
+			<input type="text" class="form-control" ng-model='movie.flash'>
 		</div>
 	</div>
 	<div class="form-group">
 		<div class="col-md-10 col-md-offset-2">
-			<button class="btn btn-primary">保存</button>
+			<button class="btn btn-primary" ng-click="save()">保存</button>
 		</div>
 	</div> 	
 </form>

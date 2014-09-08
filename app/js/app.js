@@ -4,5 +4,6 @@ var myApp = angular.module('myApp',['ngRoute','myApp.controllers','myApp.service
 				  .when('/admin',{templateUrl:'tpl/admin.html',controller:'adminCtrl'})
 				  .when('/movie/:id',{templateUrl:'tpl/detail.html',controller:'detailCtrl'})
 				  .when('/list',{templateUrl:'tpl/list.html',controller:'listCtrl'})
+				  .when('/update/:id',{templateUrl:'tpl/admin.html',controller:'updateCtrl'})
 				  .otherwise({redirectTo:'/'});
 });
