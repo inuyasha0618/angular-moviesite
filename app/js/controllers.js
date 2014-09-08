@@ -14,11 +14,16 @@ angular.module('myApp.controllers',['myApp.services'])
 	$scope.movie = {};
 	var id = $routeParams.id;
 	getData.getById(id).success(function(data){
+		console.log(data);
 		data.flash = $sce.trustAsResourceUrl(data.flash);
 		$scope.movie = data;
 	})
 
 })
-.controller('listCtrl',function($scope){
-	$scope.pageMessage = '列表页'
+.controller('listCtrl',function($scope,getData){
+	$scope.pageMessage = '列表页';
+	$scope.movies = [];
+	getData.fetch().success(function(dts){
+		$scope.movies = dts;
+	})
 })
