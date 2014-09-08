@@ -36,8 +36,6 @@ angular.module('myApp.controllers',['myApp.services'])
 	}
 	getData.fetch().success(function(dts){
 		$scope.movies = dts;
-		console.log(dts[0].meta.createAt);
-		console.log(typeof dts[0].meta.createAt);
 	})
 })
 .controller('updateCtrl',function($scope,$routeParams,$location,getData,postData){

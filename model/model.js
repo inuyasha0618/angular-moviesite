@@ -38,6 +38,7 @@ MovieSchema.statics = {
 }
 
 MovieSchema.pre('save',function(next){
+	console.log("enter into save");
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	}else{
@@ -47,11 +48,8 @@ MovieSchema.pre('save',function(next){
 });
 
 MovieSchema.pre('update',function(next){
-	if(this.isNew){
-		this.meta.createAt = this.meta.updateAt = Date.now();
-	}else{
-		this.meta.updateAt = Date.now();
-	}
+	console.log("enter into update")
+	this.meta.updateAt = Date.now();
 	next();
 });
 
