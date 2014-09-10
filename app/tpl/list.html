@@ -4,31 +4,36 @@
 		<input type="text" class="form-control" placeholder="输入查询条件" ng-model="query">
 	</div>
 </div>
-<table class="table table-bordered table-hover">
-	<thead>
-		<tr>
-			<th>电影名字</th>
-			<th>导演</th>
-			<th>国家</th>
-			<th>上映年份</th>
-			<th>录入时间</th>
-			<th>更新时间</th>
-			<th>查看</th>
-			<th>更新</th>
-			<th>删除</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat='movie in movies|filter:query'>
-			<td>{{movie.title}}</td>
-			<td>{{movie.director}}</td>
-			<td>{{movie.country}}</td>
-			<td>{{movie.year}}</td>
-			<td>{{movie.meta.createAt|dateFilter}}</td>
-			<td>{{movie.meta.updateAt|dateFilter}}</td>
-			<td><a href="#/movie/{{movie._id}}">查看</a></td>
-			<td><a href="#/update/{{movie._id}}">更新</a></td>
-			<td><a ng-click="remove(movie._id)" class="btn btn-danger">删除</a></td>
-		</tr>
-	</tbody>
-</table>
+
+<div class="tb">
+	<div class="row">
+		<div class="col-md-3">电影名字</div>
+		<div class="col-md-1">导演</div>
+		<div class="col-md-1">国家</div>
+		<div class="col-md-1">上映年份</div>
+		<div class="col-md-2">录入时间</div>
+		<div class="col-md-2">更新时间</div>
+		<div class="col-md-2">
+			<div class="row">
+				<div class="col-md-4">查看</div>
+				<div class="col-md-4">更新</div>
+				<div class="col-md-4">删除</div>
+			</div>
+		</div>
+	</div>
+	<div class="row list" ng-repeat='movie in movies|filter:query'>
+		<div class="col-md-3">{{movie.title}}</div>
+		<div class="col-md-1">{{movie.director}}</div>
+		<div class="col-md-1">{{movie.country}}</div>
+		<div class="col-md-1">{{movie.year}}</div>
+		<div class="col-md-2">{{movie.meta.createAt|dateFilter}}</div>
+		<div class="col-md-2">{{movie.meta.updateAt|dateFilter}}</div>
+		<div class="col-md-2">
+			<div class="row">
+				<div class="col-md-4"><a href="#/movie/{{movie._id}}">查看</a></div>
+				<div class="col-md-4"><a href="#/update/{{movie._id}}">更新</a></div>
+				<div class="col-md-4"><a ng-click="remove(movie._id)" class="btn btn-danger">删除</a></div>
+			</div>
+		</div>
+	</div>	
+</div>

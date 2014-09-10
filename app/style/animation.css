@@ -1,0 +1,13 @@
+.list{
+	position: relative;
+}
+
+.list.ng-leave{
+	transition:.5s ease-in all;
+	-webkit-transition:.5s ease-in all;
+	left: 0;
+}
+
+.list.ng-leave.ng-leave-active{
+	left:1000px;
+}
