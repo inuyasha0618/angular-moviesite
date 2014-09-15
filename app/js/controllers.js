@@ -1,5 +1,6 @@
 angular.module('myApp.controllers',['myApp.services'])
 .controller('homeCtrl',function($scope,getData){
+	$scope.pageClass = 'page-home';
 	$scope.pageMessage = 'iMovie 主页';
 	$scope.movies = [];
 	getData.fetch().success(function(dts){
@@ -7,6 +8,7 @@ angular.module('myApp.controllers',['myApp.services'])
 	});
 })
 .controller('adminCtrl',function($scope,postData,$location){
+	$scope.pageClass = 'page-admin';
 	$scope.pageMessage = '后台录入页'
 	$scope.movie = {};
 	$scope.save = function(){
@@ -16,6 +18,7 @@ angular.module('myApp.controllers',['myApp.services'])
 	}
 })
 .controller('detailCtrl',function($scope,$routeParams,$sce,getData){
+	$scope.pageClass = 'page-detail';
 	$scope.pageMessage = '详情页';
 	$scope.movie = {};
 	var id = $routeParams.id;
@@ -27,6 +30,7 @@ angular.module('myApp.controllers',['myApp.services'])
 
 })
 .controller('listCtrl',function($scope,getData,delData){
+	$scope.pageClass = 'page-list';
 	$scope.pageMessage = '列表页';
 	$scope.movies = [];
 	$scope.remove = function(item){
@@ -44,6 +48,7 @@ angular.module('myApp.controllers',['myApp.services'])
 	})
 })
 .controller('updateCtrl',function($scope,$routeParams,$location,getData,postData){
+	$scope.pageClass = 'page-admin';
 	$scope.movie = {};
 	$scope.pageMessage = '编辑页';
 	$scope.save = function(){

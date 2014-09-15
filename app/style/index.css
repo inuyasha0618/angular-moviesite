@@ -1,3 +1,6 @@
+.fix{position: fixed;left: 10px;top: 100px;margin: 0;padding: 0;}
+.fix ul{padding: 0;}
+.fix li{list-style: none;margin-bottom: 10px;}
 .tb>.row{
 	padding-top: 10px;
 	border-bottom: 1px rgba(0,0,0,0.2) solid;
