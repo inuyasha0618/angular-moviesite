@@ -11,3 +11,15 @@ angular.module('myApp.directives',[])
 		}
 	}
 })
+.directive('homePageFinished',function($timeout){
+	return{
+		restrict: 'A',
+		link: function(scope,element,attrs){
+			if(scope.$last === true){
+				console.log('发出事件');
+				scope.$emit('ngRepeatFinished');
+			}
+		}
+		
+	}
+});

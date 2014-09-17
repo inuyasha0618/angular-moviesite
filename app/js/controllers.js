@@ -6,10 +6,16 @@ angular.module('myApp.controllers',['myApp.services'])
 	getData.fetch().success(function(dts){
 		$scope.movies = dts;
 	});
+
+	$scope.$on('ngRepeatFinished',function(){
+		console.log("收到事件！");
+		var container = document.getElementById('container');
+		gundongLoad(document.querySelectorAll('[Xsrc]'),'Xsrc');
+	});
 })
 .controller('adminCtrl',function($scope,postData,$location){
 	$scope.pageClass = 'page-admin';
-	$scope.pageMessage = '后台录入页'
+	$scope.pageMessage = '后台录入页';
 	$scope.movie = {};
 	$scope.save = function(){
 		postData.post($scope.movie).success(function(data){
