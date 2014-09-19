@@ -48,8 +48,12 @@ angular.module('myApp.controllers',['myApp.services'])
 	delOrNot.style.left = (document.documentElement.clientWidth - 400)/2 + 'px';
 	$scope.remove = function(item){
 		mask.style.display = 'block';
-		delOrNot.style.display = 'block';
 		delName.innerHTML = item.title;
+		delOrNot.style.display = 'block';
+		delOrNot.className += ' del-enter'
+		setTimeout(function(){
+			delOrNot.className = delOrNot.className.replace(' del-enter','');
+		},300);
 		btnDel.onclick = function(){
 			mask.style.display = 'none';
 			delOrNot.style.display = 'none';

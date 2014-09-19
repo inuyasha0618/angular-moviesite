@@ -28,7 +28,8 @@
 	border-radius: 20px;
 	background-color: #fff;
 	display: none;
-	-webkit-transition: .5s all ease-in;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+	background: url(../images/wood.jpg);
 }
 
 #del-or-not .info{
@@ -43,8 +44,18 @@
 	font-weight: bold;
 }
 
+@-webkit-keyframes del-enter{
+	from {-webkit-transform: translateY(-200%);}
+	to {-webkit-transform: translateY(0);}
+}
+
 @-webkit-keyframes del-leave{
+	from {-webkit-transform: translateY(0);}
 	to {-webkit-transform: translateY(-200%);}
+}
+
+.del-enter{
+	-webkit-animation: del-enter .3s ease-in  forwards;
 }
 
 .del-leave{
@@ -53,9 +64,19 @@
 
 #del-or-not .bgc{
 	text-align: center;
+	margin-bottom: 10px;
 }
 
 #del-or-not .bgc img{
 	width: 70%;
     
+}
+
+
+#del-or-not .logo{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: -80px;
+	right: 0;
 }
