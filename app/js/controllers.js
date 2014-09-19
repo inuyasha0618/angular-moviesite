@@ -39,15 +39,38 @@ angular.module('myApp.controllers',['myApp.services'])
 	$scope.pageClass = 'page-list';
 	$scope.pageMessage = '列表页';
 	$scope.movies = [];
+	var mask = document.getElementById('mask');
+	var delOrNot = document.getElementById('del-or-not');
+	var btnDel = delOrNot.getElementsByClassName('delete')[0];
+	var btnCancel = delOrNot.getElementsByClassName('cancel')[0];
+	var delName = delOrNot.getElementsByClassName('delname')[0];
+	delOrNot.style.top = (document.documentElement.clientHeight - 300)/2 + 'px';
+	delOrNot.style.left = (document.documentElement.clientWidth - 400)/2 + 'px';
 	$scope.remove = function(item){
-		delData.delete(item._id).success(function(data){
-			for(var i = 0;i < $scope.movies.length; i++){
-				if($scope.movies[i] == item){
-					$scope.movies.splice(i,1);
-					break;
+		mask.style.display = 'block';
+		delOrNot.style.display = 'block';
+		delName.innerHTML = item.title;
+		btnDel.onclick = function(){
+			mask.style.display = 'none';
+			delOrNot.style.display = 'none';
+			delData.delete(item._id).success(function(data){
+				for(var i = 0;i < $scope.movies.length; i++){
+					if($scope.movies[i] == item){
+						$scope.movies.splice(i,1);
+						break;
+					}
 				}
-			}
-		})
+			})
+		}
+
+		btnCancel.onclick = function(){
+			mask.style.display = 'none';
+			delOrNot.className += ' del-leave';
+			setTimeout(function(){
+				delOrNot.className = delOrNot.className.replace(" del-leave","");
+				delOrNot.style.display = 'none';
+			},300);
+		}
 	}
 	getData.fetch().success(function(dts){
 		$scope.movies = dts;

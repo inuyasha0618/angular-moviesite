@@ -5,3 +5,57 @@
 	padding-top: 10px;
 	border-bottom: 1px rgba(0,0,0,0.2) solid;
 }
+
+#mask{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	z-index: 100;
+	display: none;
+}
+
+#del-or-not{
+	position: fixed;
+	opacity: 1;
+	z-index: 200;
+	width: 400px;
+	height: 300px;
+	border-radius: 20px;
+	background-color: #fff;
+	display: none;
+	-webkit-transition: .5s all ease-in;
+}
+
+#del-or-not .info{
+	text-align: center;
+	font-size: 16px;
+	font-family: 'microsoft yahei';
+}
+
+
+#del-or-not .info .delname{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+@-webkit-keyframes del-leave{
+	to {-webkit-transform: translateY(-200%);}
+}
+
+.del-leave{
+	-webkit-animation: del-leave .3s ease-in forwards;
+}
+
+#del-or-not .bgc{
+	text-align: center;
+}
+
+#del-or-not .bgc img{
+	width: 70%;
+    
+}
