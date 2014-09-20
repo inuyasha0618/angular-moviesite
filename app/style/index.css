@@ -1,4 +1,12 @@
-.fix{position: fixed;left: 10px;top: 100px;margin: 0;padding: 0;}
+.page{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+    background-color: #fff;
+}
+
+.fix{position: fixed;left: 10px;top: 100px;margin: 0;padding: 0;z-index: 10000;}
 .fix ul{padding: 0;}
 .fix li{list-style: none;margin-bottom: 10px;}
 .tb>.row{
@@ -79,4 +87,9 @@
 	position: absolute;
 	top: -80px;
 	right: 0;
+}
+
+
+.row.list:hover{
+	background-color: rgba(174,222,203,0.3);
 }

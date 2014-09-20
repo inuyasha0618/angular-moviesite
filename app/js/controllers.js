@@ -9,7 +9,6 @@ angular.module('myApp.controllers',['myApp.services'])
 
 	$scope.$on('ngRepeatFinished',function(){
 		console.log("收到事件！");
-		var container = document.getElementById('container');
 		gundongLoad(document.querySelectorAll('[Xsrc]'),'Xsrc');
 	});
 })

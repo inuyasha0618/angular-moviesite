@@ -7,15 +7,17 @@
 	<link rel="stylesheet" href="./style/index.css">
 	<link rel="stylesheet" href="./style/animation.css">
 </head>
-<body ng-app="myApp" style="overflow-x:hidden;">
+<body ng-app="myApp" >
 	<div class="fix">
 		<ul>
-			<li><a class="btn btn-success btn-block" href="#/">首页</a></li>
+			<li><a class="btn btn-success btn-block" href="#home">首页</a></li>
 			<li><a class="btn btn-info btn-block" href="#admin">添加新视频</a></li>
 			<li><a class="btn btn-warning btn-block" href="#list">列表页</a></li>
 		</ul>
 	</div>
-	<div class="container {{pageClass}}" id="container" style="background: #fff;"  ng-view></div>
+	<div class="container"  style="position: relative">
+		<div class="container page {{pageClass}}" ng-view></div>
+	</div>
 	<script src="./lib/angular.min.js"></script>
 	<script src="./lib/angular-route.min.js"></script>
 	<script src="./lib/angular-animate.min.js"></script>
