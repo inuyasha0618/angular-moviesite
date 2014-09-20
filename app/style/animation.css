@@ -130,9 +130,7 @@
 .ng-enter         { z-index: 777; }
 .ng-leave         { z-index: 888; }
 
-.page-home.ng-enter{animation:fadeIn 0.5s both ease-in; -webkit-animation:fadeIn 0.5s both ease-in; }
-/*.page-home.ng-leave{transform-origin: 0% 0%; animation: rotateFall 1s both ease-in;-webkit-transform-origin: 0% 0%;-webkit-animation: rotateFall 1s both ease-in;}*/
-/*.page-home.ng-enter{animation:slideInRight 0.5s both ease-in; -webkit-animation:slideInRight 0.5s both ease-in; }*/
+.page-home.ng-enter{animation:slideInRight 0.5s both ease-in; -webkit-animation:slideInRight 0.5s both ease-in; }
 .page-home.ng-leave{transform-origin: 50% 50%; animation: rotateOutNewspaper .5s both ease-in;-webkit-animation: rotateOutNewspaper .5s both ease-in;}
 
 .page-admin.ng-enter{animation:slideInRight 0.5s both ease-in; -webkit-animation:slideInRight 0.5s both ease-in; }
@@ -140,17 +138,6 @@
 
 .page-list.ng-enter{animation:slideInUp 0.6s both ease-in; -webkit-animation:slideInUp 0.6s both ease-in; }
 .page-list.ng-leave{animation:slideOutLeft 0.6s both ease-in; -webkit-animation:slideOutLeft 0.6s both ease-in;}
-/*.page-detail.ng-leave{animation:fadeOut 0.5s both ease-in; -webkit-animation:fadeOut 0.5s both ease-in;}*/
 
 .page-detail.ng-enter{animation:slideInRight 0.5s both ease-in; -webkit-animation:slideInRight 0.5s both ease-in; }
 .page-detail.ng-leave{transform-origin: 0% 0%; animation: rotateFall 1s both ease-in;-webkit-transform-origin: 0% 0%;-webkit-animation: rotateFall 1s both ease-in;}
-/*.page-home.ng-leave{transform-origin: 50% 50%; animation: rotateOutNewspaper .5s both ease-in;-webkit-animation: rotateOutNewspaper .5s both ease-in;}*/
-
-/*.page-admin.ng-enter{animation:slideInRight 0.5s both ease-in; -webkit-animation:slideInRight 0.5s both ease-in;}
-.page-admin.ng-leave{transform-origin: 0% 0%; animation: rotateFall 1s both ease-in;-webkit-transform-origin: 0% 0%;-webkit-animation: rotateFall 1s both ease-in;}
-
-.page-detail.ng-enter{animation:slideInUp 0.5s both ease-in; -webkit-animation:slideInUp 0.5s both ease-in;}
-.page-detail.ng-leave{transform-origin: 0% 0%; animation: rotateFall 1s both ease-in;-webkit-transform-origin: 0% 0%;-webkit-animation: rotateFall 1s both ease-in;}
-
-.page-list.ng-enter{animation:slideInRight 0.5s both ease-in; -webkit-animation:slideInRight 0.5s both ease-in;}
-.page-list.ng-leave{animation:slideOutDown 0.5s both ease-in; -webkit-animation:slideOutDown 0.5s both ease-in;}*/

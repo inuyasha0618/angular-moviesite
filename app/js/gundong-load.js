@@ -12,14 +12,17 @@ function gundongLoad(imagesCollection,srcAttr){
 	}
 
 	function display(){
-		while(images.length > 0 && images[0].getBoundingClientRect().top >= 0 && images[0].getBoundingClientRect().top < windowHeight){
-			console.log("hehe");
-			var img = images.shift();
-			(function(currentImg){
-				setTimeout(function(){
-				currentImg.src = currentImg.getAttribute(srcAttr);
-				},300);
-			})(img);
+		for(var i = 0;i < images.length;){
+			if(!(images[i].getBoundingClientRect().bottom < 0 || images[i].getBoundingClientRect().top > windowHeight)){
+				(function(currentImg){
+					setTimeout(function(){
+					currentImg.src = currentImg.getAttribute(srcAttr);
+					},300);
+				})(images[i]);
+				images.splice(i,1);
+			}else{
+				i++;
+			}
 		}
 	}
 	return display();
